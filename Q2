@@ -1,0 +1,56 @@
+<script>
+
+let user_name, year, month, day, leap_year;
+
+alert(`Welcome to the Ministry of Education's Date Validator`);
+user_name=prompt(`Let's get started, What is your name?`);
+alert(`Excellent ${user_name}! To use this date validator, when entering month choose the number that represents the month!\nEg. March is the third month, so enter 3 for the Month.\nReady, Set & Go!`);
+
+year=parseInt(prompt(`Please enter a year (4 digits only):`));
+month=parseInt(prompt(`Please enter the month as an interger:`));
+day=parseInt(prompt(`Please enter the days of the month:`));
+year_leap=year%4;
+
+if(month==4 || month==6 || month==9 || month==11)
+	{
+		if(day<=30 && day>=1)
+        {	
+        	alert(`Valid Date`);
+        }
+		else 
+        {
+		alert(`Invalid Date`);
+		}
+	}
+else if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
+	{
+		if(day<=31 && day>=1)
+    	{	
+    		alert(`Valid Date`);
+        }
+    	else
+    	{
+    		alert(`Invalid Date`);
+    	}
+	}
+else if (month==2)
+	{
+		if(day<=29 && day>=1 && year_leap==0)
+    	{
+    		alert(`Valid Date`);
+    	}
+    	else if (day<=28 && day>=0)
+    	{
+    		alert(`Valid Date`);
+    	}
+		else
+    	{
+        	alert(`Invalid Date`);
+    	}
+    }
+else 
+	{
+    	alert(`${user_name}, you have entered values outside the scope of this excercise, please try again!`);
+    }
+
+</script>
